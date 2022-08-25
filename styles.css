@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+  --primary-dark: hsl(300, 43%, 22%);
+  --primary-light-gray: hsl(300, 24%, 96%);
+  --primary-dark-gray: hsl(303, 10%, 53%);
+  --soft-pink: hsl(333, 80%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+}
+
+body {
+  background-image: url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, bottom right;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  height: 90vh;
+  width: 88vw;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+  "ps ss"
+  "ts ts"
+}
+
+.paragraph-section {
+  grid-area: ps;
+}
+
+.star-section {
+  grid-area: ss;
+}
+
+.paragraph-section, .star-section{
+  padding: 13%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-section {
+  display: flex;
+  grid-area: ts;
+  flex-direction: row;
+  padding-left: 4%;
+  padding-top: 3%;
+}
+
+.paragraph-section h1 {
+  color: var(--primary-dark);
+  font-size: 3.4rem;
+  max-width: 25rem;
+  line-height: .85;
+  margin-bottom: 1.8rem;
+}
+
+.paragraph-section p {
+  font-size: 1.1rem;
+  color: var(--primary-dark-gray);
+  line-height: 1.4;
+  max-width: 27rem;
+}
+
+.star-section {
+  padding: 0;
+  align-items: start;
+  justify-content: flex-end;
+  padding-bottom: 2rem;
+}
+
+.rating {
+  width: 28rem;
+  display: flex;
+  padding: 1.2rem 1.5rem;
+  background-color: var(--primary-light-gray);
+  border-radius: .5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.rating img {
+  margin-right: .5rem;
+}
+
+.rating p {
+  margin-left: 1.5rem;
+  color: var(--primary-dark);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.second-rating {
+  transform: translateX(3rem);
+}
+
+.third-rating {
+  transform: translateX(6rem);
+}
+
+.card {
+  background-color: var(--primary-dark);
+  max-width: 22rem;
+  max-height: 15rem;
+  color: white;
+  padding: 2.2rem;
+  border-radius: .5rem;
+  margin-left: 2rem;
+}
+
+.card .header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card .header img {
+  border-radius: 50%;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 1.3rem;
+}
+
+.subtitle {
+  margin-top: .3rem;
+  color: var(--soft-pink);
+  font-weight: 400;
+}
+
+.card p {
+  line-height: 1.4;
+  margin-top: 1.5rem;
+}
+
+.second-card {
+  transform: translateY(1rem)
+}
+
+.third-card {
+  transform: translateY(2rem)
+}
+
+
+@media (max-width: 1030px) {
+  .card {
+    max-height: 25rem;
+  }
+
+  .second-rating, .third-rating {
+    transform: translateX(0);
+  }
+
+  .second-card, .third-card {
+    transform: translateY(0);
+  }
+
+  .testimonial-section {
+    margin-top: 3rem;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 792px) {
+
+  body {
+    background-image: url('./images/bg-pattern-top-desktop.svg')
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .star-section, .paragraph-section, .testimonial-section {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .paragraph-section {
+    justify-content: flex-start;
+    padding: 15% 10% 5% 10%;
+  }
+
+  .paragraph-section h1 {
+    font-size: 2.8rem;
+    max-width: none;
+  }
+
+  .paragraph-section p {
+    font-size: 1.2rem;
+    padding-bottom: 5%;
+    max-width: none;
+  }
+
+  .stars {
+    margin-bottom: 1rem;
+  }
+
+  .rating {
+    width: auto;
+    flex-direction: column;
+    min-width: 22rem;
+    align-items: center;
+    justify-content: center;
+    max-width: none;
+  }
+
+  .rating p {
+    margin: 0;
+  }
+
+  .testimonial-section {
+    padding: 0;
+    margin: 0;
+    height: auto;
+  }
+
+  .card {
+    margin: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+}
